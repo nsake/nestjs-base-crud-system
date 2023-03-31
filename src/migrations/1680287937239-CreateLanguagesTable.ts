@@ -20,6 +20,12 @@ export class CreateLanguagesTable1680287937239 implements MigrationInterface {
       }),
       true,
     );
+
+    await queryRunner.query(`
+        INSERT INTO "languages" (lang_abbreviation, name) VALUES 
+          ('fr', 'French' ),
+          ('de', 'German' ),
+        `);
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {

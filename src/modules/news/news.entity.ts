@@ -8,8 +8,9 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import User from '../users /users.entity';
+import NewsTranslation from '../submodules/news_translations/news_translations.entity';
 
-@Entity()
+@Entity('news')
 class News extends ParentEntity {
   @PrimaryGeneratedColumn()
   public id: number;
@@ -29,11 +30,11 @@ class News extends ParentEntity {
   @Column({ nullable: false })
   userId: number;
 
-  // @OneToMany(
-  //   () => NewsTranslations,
-  //   (news_translations) => news_translations.news,
-  // )
-  // newsTranslations: NewsTranslations[];
+  @OneToMany(
+    () => NewsTranslation,
+    (news_translations) => news_translations.news,
+  )
+  newsTranslations: NewsTranslation[];
 }
 
 export default News;
