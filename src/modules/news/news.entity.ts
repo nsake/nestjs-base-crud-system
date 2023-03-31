@@ -33,7 +33,12 @@ class News extends ParentEntity {
   @OneToMany(
     () => NewsTranslation,
     (news_translations) => news_translations.news,
-    { cascade: true },
+    {
+      eager: true,
+      cascade: true,
+      onDelete: 'CASCADE',
+      onUpdate: 'CASCADE',
+    },
   )
   newsTranslations: NewsTranslation[];
 }

@@ -21,9 +21,19 @@ export class NewsService {
     return await this._newsRepository.save(instance);
   }
 
-  public async findOne(id: number) {
+  async findOne(id: number) {
     return await this._newsRepository.find({
       where: { id },
     });
+  }
+
+  async remove(id: number) {
+    return await this._newsRepository.delete({
+      id,
+    });
+  }
+
+  async update(id: number, updateNewsDto: any) {
+    return await this._newsRepository.save({ id, ...updateNewsDto });
   }
 }

@@ -1,3 +1,4 @@
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
 
 export class CreateNewsTranslationDto {
@@ -13,7 +14,7 @@ export class CreateNewsTranslationDto {
   @IsString()
   title: string;
 
-  @IsOptional()
+  @IsNotEmpty()
   @IsString()
   lang_abbreviation: string;
 
@@ -22,11 +23,23 @@ export class CreateNewsTranslationDto {
   news_id: number;
 }
 export class AutoCreateNewsTranslationDto {
+  @ApiProperty()
   @IsNotEmpty()
   @IsString()
   text: string;
 
+  @ApiPropertyOptional()
   @IsOptional()
+  @IsString()
+  description: string;
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
+  title: string;
+
+  @ApiProperty()
+  @IsNotEmpty()
   @IsString()
   lang_abbreviation: string;
 }

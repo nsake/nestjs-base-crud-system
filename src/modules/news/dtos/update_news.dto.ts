@@ -1,10 +1,10 @@
-import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
+import { ApiPropertyOptional } from '@nestjs/swagger';
+import { IsOptional, IsString } from 'class-validator';
 import { AutoCreateNewsTranslationDto } from 'src/modules/submodules/news_translations/dtos/create_news_translation.dto';
 
-export class CreateNewsDto {
-  @ApiProperty()
-  @IsNotEmpty()
+export class UpdateNewsDto {
+  @ApiPropertyOptional()
+  @IsOptional()
   @IsString()
   title: string;
 
@@ -13,15 +13,10 @@ export class CreateNewsDto {
   @IsString()
   description: string;
 
-  @ApiProperty()
-  @IsNotEmpty()
+  @ApiPropertyOptional()
+  @IsOptional()
   @IsString()
   text: string;
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsNumber()
-  userId: number;
 
   @ApiPropertyOptional({ type: AutoCreateNewsTranslationDto })
   @IsOptional()
