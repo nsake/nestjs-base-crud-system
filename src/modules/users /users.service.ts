@@ -10,7 +10,7 @@ export class UsersService {
   constructor(private _usersRepository: UsersRepository) {}
 
   async create(userData: UserDto): Promise<User> {
-    const newUser = await this._usersRepository.create(userData);
+    const newUser = this._usersRepository.create(userData);
 
     if (!newUser) {
       throw new HttpException(
