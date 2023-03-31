@@ -1,4 +1,5 @@
 import { IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
+import { AutoCreateNewsTranslationDto } from 'src/modules/submodules/news_translations/dtos/create_news_translation.dto';
 
 export class CreateNewsDto {
   @IsNotEmpty()
@@ -16,4 +17,7 @@ export class CreateNewsDto {
   @IsNotEmpty()
   @IsNumber()
   userId: number;
+
+  @IsOptional()
+  newsTranslations: AutoCreateNewsTranslationDto[];
 }

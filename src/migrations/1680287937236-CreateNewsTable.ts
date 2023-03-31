@@ -65,8 +65,8 @@ export class CreateNewsTable1680287937236 implements MigrationInterface {
     );
 
     await queryRunner.query(`
-        INSERT INTO "news" (id, title, description, text, userId) VALUES 
-          (1, 'testTitle', 'testDescription', 'testText', 1 ),
+        INSERT INTO "news" (id, title, description, text, "userId") VALUES 
+          (1, 'testTitle', 'testDescription', 'testText', 1 )
         `);
   }
 

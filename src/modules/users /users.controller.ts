@@ -4,7 +4,7 @@ import { SchemaValidationPipe } from 'src/infrastructure/pipes/schema-validation
 import { GlobalExceptionFilter } from 'src/infrastructure/decorators/catch.decorator';
 import { UserDto } from './dtos/user.dto';
 
-@Controller()
+@Controller('users')
 export class UsersController {
   constructor(private readonly userService: UsersService) {}
 

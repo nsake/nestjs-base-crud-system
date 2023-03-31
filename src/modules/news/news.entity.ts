@@ -15,13 +15,13 @@ class News extends ParentEntity {
   @PrimaryGeneratedColumn()
   public id: number;
 
-  @Column({ unique: true, nullable: false })
+  @Column({ nullable: false })
   public title: string;
 
-  @Column({ unique: false, nullable: true })
+  @Column({ nullable: true })
   public description: string;
 
-  @Column({ unique: false, nullable: false })
+  @Column({ nullable: false })
   public text: string;
 
   @OneToOne(() => User, (user) => user.id)
@@ -33,6 +33,7 @@ class News extends ParentEntity {
   @OneToMany(
     () => NewsTranslation,
     (news_translations) => news_translations.news,
+    { cascade: true },
   )
   newsTranslations: NewsTranslation[];
 }

@@ -34,6 +34,15 @@ class NewsTranslation {
     nullable: false,
   })
   text: string;
+
+  @Column({ type: 'varchar' })
+  title: string;
+
+  @Column({
+    type: 'varchar',
+    nullable: false,
+  })
+  description: string;
 }
 
 export default NewsTranslation;

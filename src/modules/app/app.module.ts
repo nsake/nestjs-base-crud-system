@@ -8,6 +8,9 @@ import { AppService } from './app.service';
 
 import { typeormUseFactory } from 'src/infrastructure/config/typeorm';
 import { configuration } from 'src/infrastructure/config/configuration';
+import { NewsModule } from '../news/news.module';
+import { LanguageModule } from '../languages/languages.module';
+import { UsersModule } from '../users /users.module';
 
 @Module({
   imports: [
@@ -25,6 +28,10 @@ import { configuration } from 'src/infrastructure/config/configuration';
         return dataSource;
       },
     }),
+
+    NewsModule,
+    UsersModule,
+    LanguageModule,
   ],
   controllers: [AppController],
   providers: [AppService],

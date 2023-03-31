@@ -8,7 +8,9 @@ export class CreateNewsTranslationsTable1680287937242
       CREATE TABLE news_translations(
       news_id int REFERENCES news (id) ON UPDATE CASCADE ON DELETE CASCADE,
       lang_abbreviation varchar REFERENCES languages (lang_abbreviation) ON UPDATE CASCADE,
+      title varchar NOT NULL,
       text varchar NOT NULL,
+      description varchar,
       CONSTRAINT news_translations_pkey PRIMARY KEY (news_id, lang_abbreviation)
     )`);
   }

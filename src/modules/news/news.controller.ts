@@ -4,7 +4,7 @@ import { SchemaValidationPipe } from 'src/infrastructure/pipes/schema-validation
 import { GlobalExceptionFilter } from 'src/infrastructure/decorators/catch.decorator';
 import { CreateNewsDto } from './dtos/create_news.dto';
 
-@Controller()
+@Controller('news')
 export class NewsController {
   constructor(private readonly userService: NewsService) {}
 

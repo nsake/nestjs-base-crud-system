@@ -41,8 +41,8 @@ export class CreateUsersTable1680287937234 implements MigrationInterface {
     );
 
     await queryRunner.query(`
-        INSERT INTO "users" (id, firstName, lastName) VALUES 
-          (1, 'testUserFN', 'testUserLN' ),
+        INSERT INTO "users" (id, "firstName", "lastName") VALUES 
+          (1, 'testUserFN', 'testUserLN' )
         `);
   }
 
